@@ -8,8 +8,9 @@ class Todo extends Component {
         <input 
           type='checkbox' 
           className='todo-checkbox'
+          //checked={ this.props.todo.completed ? true : false }
         />
-        <p>Test Todo</p>
+        <p>{ this.props.todo.title }</p>
       </li>
     )
   }
