@@ -1,4 +1,4 @@
-##How To Start
+**How To Start**
 
 To Start this app you have to use: 
 ```
