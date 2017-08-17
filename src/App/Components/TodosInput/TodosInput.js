@@ -10,20 +10,23 @@ class TodosInput extends Component {
     this.saveNewTodo = this.saveNewTodo.bind(this);
 
     this.state = {
-      newTodoInput: null
+      newTodoInput: ''
     }
   }
 
-  saveNewTodo() {
-    return this.props.addTodo(this.state.newTodoInput)
+  saveNewTodo(e) {
+    this.props.addTodo(this.state.newTodoInput)
+    this.setState({ newTodoInput: '' })
+    e.preventDefault();
   }
 
   render() {
     return(
-      <form onSubmit={ () => this.saveNewTodo() } >
+      <form onSubmit={ (e) => this.saveNewTodo(e) } >
         <input 
           className='todos-input' 
           onChange={ (e) => this.setState({ newTodoInput: e.target.value }) }
+          value={ this.state.newTodoInput }
         />
       </form>
     )
